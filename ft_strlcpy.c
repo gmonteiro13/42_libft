@@ -6,7 +6,7 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:23:57 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/11 17:24:38 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/16 12:46:59 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t  ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    int	i;
+    size_t	i;
 
 	i = 0;
 	if (dest == NULL || src == NULL)
