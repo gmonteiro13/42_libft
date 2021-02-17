@@ -6,7 +6,7 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:54:05 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/17 15:13:09 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:49:03 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	unsigned int abs_number;
 
 	if (fd < 0 || fd > 2)
-		return;
+		return ;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

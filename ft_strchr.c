@@ -6,7 +6,7 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 15:52:56 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/11 16:16:06 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:54:08 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ char	*ft_strchr(const char *s, int c)
 		{
 			return (char *)p;
 		}
-        if (*p == '\0')
-        {
-            return (NULL);
-        }
+		if (*p == '\0')
+		{
+			return (NULL);
+		}
 		p++;
 	}
 	return (NULL);

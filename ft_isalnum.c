@@ -6,7 +6,7 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 20:37:05 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/11 20:36:41 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:22:54 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_isalnum(int c)
 {
 	if (ft_isdigit(c) || ft_isalpha(c))
-        return (1);
-    else
-        return (0);
+		return (1);
+	else
+		return (0);
 }

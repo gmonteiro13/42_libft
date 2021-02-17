@@ -6,7 +6,7 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:49:28 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/17 14:53:20 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:48:43 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_putendl_fd(char *s, int fd)
 
 	i = 0;
 	if (fd < 0 || fd > 2)
-		return;
+		return ;
 	if (s == NULL)
-		return;
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);

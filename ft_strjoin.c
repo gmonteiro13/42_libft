@@ -6,7 +6,7 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:20:57 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/16 12:45:15 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:54:40 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char				*new_str;
 	unsigned int		i;
-	
+
 	i = 0;
 	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (new_str == NULL || s1 == NULL || s2 == NULL)

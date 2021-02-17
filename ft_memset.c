@@ -6,21 +6,21 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 17:54:19 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/11 12:17:40 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:46:37 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    size_t	i;
+	size_t	i;
 
-    i = 0;
-    while (n > i)
-    {
-        ((char*)s)[i] = c;
-        i++;
-    }
-    return (s);
+	i = 0;
+	while (n > i)
+	{
+		((char*)s)[i] = c;
+		i++;
+	}
+	return (s);
 }

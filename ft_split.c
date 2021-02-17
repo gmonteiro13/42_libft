@@ -6,16 +6,16 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:39:47 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/16 21:59:02 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/17 18:53:26 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t count_segment(char const *s, char c)
+static size_t	count_segment(char const *s, char c)
 {
-	size_t counter;
-	int i;
+	size_t		counter;
+	int			i;
 
 	counter = 0;
 	i = 0;
@@ -33,10 +33,10 @@ static size_t count_segment(char const *s, char c)
 	return (counter);
 }
 
-static char *ft_strndup(const char *s1, size_t n)
+static char		*ft_strndup(const char *s1, size_t n)
 {
-	char *clone;
-	size_t i;
+	char		*clone;
+	size_t		i;
 
 	if ((clone = (char *)malloc(sizeof(char) * (n + 1))) == NULL)
 		return (NULL);
@@ -50,9 +50,9 @@ static char *ft_strndup(const char *s1, size_t n)
 	return (clone);
 }
 
-static void *destroy_strs(char **strs)
+static void		*destroy_strs(char **strs)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (strs[i] != NULL)
@@ -61,12 +61,12 @@ static void *destroy_strs(char **strs)
 	return (NULL);
 }
 
-char **ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char **strs;
-	size_t tab_counter;
-	size_t i;
-	size_t j;
+	char		**strs;
+	size_t		tab_counter;
+	size_t		i;
+	size_t		j;
 
 	if (s == NULL)
 		return (NULL);
@@ -89,32 +89,3 @@ char **ft_split(char const *s, char c)
 	strs[tab_counter] = NULL;
 	return (strs);
 }
-// void ft_print_result(char const *s)
-// {
-// 	int len;
-
-// 	len = 0;
-// 	while (s[len])
-// 		len++;
-// 	write(1, s, len);
-// }
-
-// int main()
-// {
-// 	char **tabstr;
-// 	int i;
-
-// 	i = 0;
-	
-// 	if (!(tabstr = ft_split("       lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse",' ')))
-// 		ft_print_result("NULL");
-// 	else
-// 	{
-// 		while (tabstr[i] != NULL)
-// 		{
-// 			ft_print_result(tabstr[i]);
-// 			write(1, "\n", 1);
-// 			i++;
-// 		}
-// 	}
-// }
