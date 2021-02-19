@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+         #
+#    By: gsoares- <gsoares-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/10 00:47:04 by gabriel-scm       #+#    #+#              #
-#    Updated: 2021/02/19 15:08:15 by gabriel-scm      ###   ########.fr        #
+#    Updated: 2021/02/19 15:25:40 by gsoares-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
