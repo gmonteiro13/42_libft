@@ -6,86 +6,101 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:39:47 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/17 18:53:26 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/19 15:07:40 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_segment(char const *s, char c)
+static size_t word_count(const char *s, char c)
 {
-	size_t		counter;
-	int			i;
+	int count;
 
-	counter = 0;
-	i = 0;
-	while (s[i])
+	count = 0;
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s != c && *s != 0)
 		{
-			i++;
-			continue;
+			count++;
+			while (*s != c && *s != 0)
+				s++;
 		}
-		counter++;
-		while (s[i] && s[i] != c)
-			i++;
+		else if (*s != 0)
+			s++;
 	}
-	return (counter);
+	return (count);
 }
 
-static char		*ft_strndup(const char *s1, size_t n)
+static char *ft_free(char **array, size_t n)
 {
-	char		*clone;
-	size_t		i;
+	size_t i;
 
-	if ((clone = (char *)malloc(sizeof(char) * (n + 1))) == NULL)
-		return (NULL);
 	i = 0;
 	while (i < n)
 	{
-		clone[i] = s1[i];
+		free(array[i]);
 		i++;
 	}
-	clone[i] = '\0';
-	return (clone);
-}
-
-static void		*destroy_strs(char **strs)
-{
-	int			i;
-
-	i = 0;
-	while (strs[i] != NULL)
-		free(strs[i++]);
-	free(strs);
+	free(array);
 	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+static void	cpy_segment(char *dest, const char *src, int st, int end)
 {
-	char		**strs;
-	size_t		tab_counter;
-	size_t		i;
-	size_t		j;
+	int i;
 
-	if (s == NULL)
-		return (NULL);
-	tab_counter = count_segment(s, c);
-	if ((strs = (char **)malloc(sizeof(char *) * (tab_counter + 1))) == NULL)
-		return (NULL);
-	tab_counter = 0;
-	j = -1;
-	while (s[++j])
+	i = 0;
+	while (st < end)
 	{
-		if (s[j] == c)
-			continue;
-		i = 0;
-		while (s[j + i] && s[j + i] != c)
-			i++;
-		if ((strs[tab_counter++] = ft_strndup(&s[j], i)) == NULL)
-			return (destroy_strs(strs));
-		j += i - 1;
+		dest[i] = src[st];
+		i++;
+		st++;
 	}
-	strs[tab_counter] = NULL;
-	return (strs);
+	dest[i] = 0;
+}
+
+static void word_array(char **a, const char *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	st;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c && s[i] != '\0')
+		{
+			st = i;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			if ((a[j] = (char *)malloc(sizeof(char) * (i - st + 1))) == 0)
+			{
+				ft_free(a, j);
+				return ;
+			}
+			cpy_segment(a[j], s, st, i);
+			j++;
+		}
+		else if (s[i] != 0)
+			i++;
+	}
+}
+
+char **ft_split(const char *s, char c)
+{
+	size_t words;
+	char **split;
+
+	if (s == 0)
+		return (0);
+	words = word_count(s, c);
+	split = (char **)malloc(sizeof(char *) * (words + 1));
+	if (split == 0)
+		return (0);
+	split[words] = 0;
+	if (words == 0)
+		return (split);
+	word_array(split, s, c);
+	return (split);
 }
