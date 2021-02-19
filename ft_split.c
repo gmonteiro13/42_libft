@@ -6,15 +6,15 @@
 /*   By: gabriel-scm <gabriel-scm@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:39:47 by gabriel-scm       #+#    #+#             */
-/*   Updated: 2021/02/19 15:07:40 by gabriel-scm      ###   ########.fr       */
+/*   Updated: 2021/02/19 15:11:41 by gabriel-scm      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t word_count(const char *s, char c)
+static size_t	word_count(const char *s, char c)
 {
-	int count;
+	int			count;
 
 	count = 0;
 	while (*s)
@@ -31,9 +31,9 @@ static size_t word_count(const char *s, char c)
 	return (count);
 }
 
-static char *ft_free(char **array, size_t n)
+static char		*ft_free(char **array, size_t n)
 {
-	size_t i;
+	size_t		i;
 
 	i = 0;
 	while (i < n)
@@ -45,9 +45,9 @@ static char *ft_free(char **array, size_t n)
 	return (NULL);
 }
 
-static void	cpy_segment(char *dest, const char *src, int st, int end)
+static void		cpy_segment(char *dest, const char *src, int st, int end)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (st < end)
@@ -59,11 +59,11 @@ static void	cpy_segment(char *dest, const char *src, int st, int end)
 	dest[i] = 0;
 }
 
-static void word_array(char **a, const char *s, char c)
+static void		word_array(char **a, const char *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	st;
+	size_t		i;
+	size_t		j;
+	size_t		st;
 
 	i = 0;
 	j = 0;
@@ -87,10 +87,10 @@ static void word_array(char **a, const char *s, char c)
 	}
 }
 
-char **ft_split(const char *s, char c)
+char			**ft_split(const char *s, char c)
 {
-	size_t words;
-	char **split;
+	size_t		words;
+	char		**split;
 
 	if (s == 0)
 		return (0);
